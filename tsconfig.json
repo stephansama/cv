@@ -1,0 +1,12 @@
+{
+	"include": ["schema", "scripts"],
+	"compilerOptions": {
+		"baseUrl": ".",
+		"target": "esnext",
+		"moduleResolution": "bundler",
+		"module": "esnext",
+		"paths": {
+			"@schema/*": ["./schema/*"]
+		}
+	}
+}

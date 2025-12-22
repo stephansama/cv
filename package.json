@@ -1,30 +1,38 @@
 {
-  "name": "resume",
-  "version": "1.0.0",
-  "description": "",
-  "license": "MIT",
-  "author": {
-    "name": "Stephan Randle",
-    "email": "stephanrandle@hotmail.com",
-    "url": "https://stephansama.info/"
-  },
-  "scripts": {
-    "build": "resume export $npm_package_config_output --theme=$npm_package_config_theme",
-    "dev": "resume serve --theme=$npm_package_config_theme",
-    "lint": "resume validate"
-  },
-  "config": {
-    "output": "index.html",
-    "theme": "github-styled"
-  },
-  "dependencies": {
-    "jsonresume-theme-github-styled": "^1.3.3",
-    "resume-cli": "^3.1.2"
-  },
-  "devDependencies": {
-    "prettier-plugin-jsdoc": "^1.8.0",
-    "prettier-plugin-organize-imports": "^4.3.0",
-    "prettier-plugin-packagejson": "^2.5.20"
-  },
-  "packageManager": "pnpm@10.13.1"
+	"name": "resume",
+	"version": "1.0.0",
+	"description": "",
+	"license": "MIT",
+	"author": {
+		"name": "Stephan Randle",
+		"email": "stephanrandle@hotmail.com",
+		"url": "https://stephansama.info/"
+	},
+	"type": "module",
+	"scripts": {
+		"build:www": "resume export $npm_package_config_output --theme=$npm_package_config_theme",
+		"dev": "resume serve --theme=$npm_package_config_theme",
+		"dev:convert": "tsx watch ./scripts/convert.ts",
+		"lint": "resume validate",
+		"prepare": "sh ./scripts/prepare.sh"
+	},
+	"config": {
+		"output": "index.html",
+		"theme": "github-styled"
+	},
+	"dependencies": {
+		"jsonresume-theme-github-styled": "^1.3.3",
+		"resume-cli": "^3.1.2"
+	},
+	"devDependencies": {
+		"@types/node": "^25.0.3",
+		"json-refs": "^3.0.15",
+		"json-schema-to-zod": "^2.7.0",
+		"prettier-plugin-organize-imports": "^4.3.0",
+		"prettier-plugin-packagejson": "^2.5.20",
+		"tsx": "^4.21.0",
+		"yaml": "^2.8.2",
+		"zod": "^4.2.1"
+	},
+	"packageManager": "pnpm@10.13.1"
 }

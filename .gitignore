@@ -3,3 +3,5 @@ rendercv_output
 node_modules
 index.html
 template_CV.yaml
+schema
+rendercv.yaml
