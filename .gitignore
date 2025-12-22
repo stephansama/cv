@@ -1,0 +1,5 @@
+rendercv_output
+.DS_Store
+node_modules
+index.html
+template_CV.yaml

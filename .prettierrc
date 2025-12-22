@@ -1,0 +1,10 @@
+{
+  "quoteProps": "consistent",
+  "semi": true,
+  "singleQuote": false,
+  "plugins": [
+    "prettier-plugin-jsdoc",
+    "prettier-plugin-organize-imports",
+    "prettier-plugin-packagejson"
+  ]
+}
