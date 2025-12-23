@@ -33,9 +33,6 @@ const rendercvInput = rendercv.parse({
 			network: profile.network as RenderCvNetwork,
 		})),
 	},
-	design: {
-		theme: {},
-	},
 } satisfies RenderCV);
 
 const outputFile = yaml.stringify(rendercvInput);

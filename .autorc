@@ -1,0 +1,9 @@
+{
+  "plugins": [
+    "git-tag"
+  ],
+  "owner": "stephansama",
+  "repo": "resume",
+  "name": "Stephan Randle",
+  "email": "stephanrandle@hotmail.com"
+}

@@ -5,3 +5,5 @@ index.html
 template_CV.yaml
 schema
 rendercv.yaml
+.env
+.venv

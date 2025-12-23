@@ -1,0 +1,12 @@
+[project]
+name = "resume"
+version = "0.1.0"
+description = "resume project for https://github.com/stephansama"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = []
+
+[dependency-groups]
+dev = [
+  "rendercv[full]>=2.5",
+]
