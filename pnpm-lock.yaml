@@ -36,6 +36,9 @@ importers:
       '@commitlint/types':
         specifier: ^20.2.0
         version: 20.2.0
+      '@stephansama/github-env':
+        specifier: ^0.1.4
+        version: 0.1.4
       '@types/node':
         specifier: ^25.0.3
         version: 25.0.3
@@ -69,6 +72,9 @@ importers:
       zod:
         specifier: ^4.2.1
         version: 4.2.1
+      zx:
+        specifier: ^8.8.5
+        version: 8.8.5
 
 packages:
 
@@ -502,6 +508,9 @@ packages:
 
   '@socket.io/component-emitter@3.1.2':
     resolution: {integrity: sha512-9BCxFwvbGg/RsZK9tjXd8s4UcwR0MWeFQ1XEKIQVVvAGJyINdrqKMcTRyLoK8Rse1GjzLV9cwjWV1olXRWEXVA==}
+
+  '@stephansama/github-env@0.1.4':
+    resolution: {integrity: sha512-fGWaWgKsTK3Ql8RrT5v59JxZn6GvkX0XBt4/hhxEq9VV62/e57bNCOly+ghLbwIu/e+enYLZzcjnxgiBZaNfwA==}
 
   '@tokenizer/token@0.3.0':
     resolution: {integrity: sha512-OvjF+z51L3ov0OyAU0duzsYuvO01PH7x4t6DJx+guahgTnBHkhJdG7soQeTSFLWN3efnHyibZ4Z8l2EuWwJN3A==}
@@ -3888,6 +3897,11 @@ packages:
   zod@4.2.1:
     resolution: {integrity: sha512-0wZ1IRqGGhMP76gLqz8EyfBXKk0J2qo2+H3fi4mcUP/KtTocoX08nmIAHl1Z2kJIZbZee8KOpBCSNPRgauucjw==}
 
+  zx@8.8.5:
+    resolution: {integrity: sha512-SNgDF5L0gfN7FwVOdEFguY3orU5AkfFZm9B5YSHog/UDHv+lvmd82ZAsOenOkQixigwH2+yyH198AwNdKhj+RA==}
+    engines: {node: '>= 12.17.0'}
+    hasBin: true
+
 snapshots:
 
   '@auto-it/bot-list@11.3.6': {}
@@ -4440,6 +4454,8 @@ snapshots:
   '@pkgr/core@0.2.9': {}
 
   '@socket.io/component-emitter@3.1.2': {}
+
+  '@stephansama/github-env@0.1.4': {}
 
   '@tokenizer/token@0.3.0': {}
 
@@ -8233,3 +8249,5 @@ snapshots:
       commander: 9.5.0
 
   zod@4.2.1: {}
+
+  zx@8.8.5: {}

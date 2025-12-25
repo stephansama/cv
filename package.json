@@ -11,13 +11,14 @@
 	"type": "module",
 	"scripts": {
 		"build": "pnpm run --sequential \"/^build:.*/\"",
-		"build:convert": "tsx ./scripts/convert.ts",
 		"build:cv": "uv run rendercv render $npm_package_config_output_cv",
-		"build:schema": "sh ./scripts/schema.sh",
-		"build:schema-patch": "tsx ./scripts/schema-patch.ts",
+		"build:readme": "tsx ./scripts/readme-update.ts",
+		"build:schema": "pnpm run --sequential \"/^build:schema-.*/\" ",
+		"build:schema--gen": "sh ./scripts/schema.sh",
+		"build:schema--patch": "tsx ./scripts/schema-patch.ts",
+		"build:schema-convert": "tsx ./scripts/schema-convert.ts",
 		"build:www": "resume export $npm_package_config_output_html --theme=$npm_package_config_theme",
 		"dev": "pnpm run --parallel \"/^dev:.*/\"",
-		"dev:convert": "tsx watch ./scripts/convert.ts",
 		"dev:cv": "uv run rendercv render --watch $npm_package_config_output_cv",
 		"dev:www": "resume serve --theme=$npm_package_config_theme",
 		"lint": "pnpm run --sequential \"/^lint:.*/\"",
@@ -44,6 +45,7 @@
 		"@commitlint/cli": "^20.2.0",
 		"@commitlint/config-conventional": "^20.2.0",
 		"@commitlint/types": "^20.2.0",
+		"@stephansama/github-env": "^0.1.4",
 		"@types/node": "^25.0.3",
 		"husky": "^9.1.7",
 		"json-refs": "^3.0.15",
@@ -54,7 +56,8 @@
 		"prettier-plugin-packagejson": "^2.5.20",
 		"tsx": "^4.21.0",
 		"yaml": "^2.8.2",
-		"zod": "^4.2.1"
+		"zod": "^4.2.1",
+		"zx": "^8.8.5"
 	},
 	"packageManager": "pnpm@10.13.1"
 }

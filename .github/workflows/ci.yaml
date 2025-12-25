@@ -40,8 +40,6 @@ jobs:
         run: pnpm install
       - name: 🧰 Download schemas
         run: pnpm build:schema
-      - name: 🔁 Convert from resume.json to rendercv format
-        run: pnpm build:convert
       - name: 🛠️ Generate rendercv
         run: pnpm build:cv
       - name: ↗️ Create release
