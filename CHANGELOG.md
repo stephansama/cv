@@ -1,3 +1,15 @@
+# v0.2.1 (Thu Dec 25 2025)
+
+#### 🐛 Bug Fix
+
+- fix: updated readme script to actually get ran ([@stephansama](https://github.com/stephansama))
+
+#### Authors: 1
+
+- Stephan Randle ([@stephansama](https://github.com/stephansama))
+
+---
+
 # v0.2.0 (Thu Dec 25 2025)
 
 #### 🚀 Enhancement
