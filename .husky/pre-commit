@@ -1,2 +1,3 @@
-pnpm run build:cv
+#!/bin/sh
+
 lint-staged -v

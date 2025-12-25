@@ -1,9 +1,9 @@
-rendercv_output
 .DS_Store
-node_modules
-index.html
-template_CV.yaml
-schema
-rendercv.yaml
 .env
 .venv
+index.html
+node_modules
+rendercv.yaml
+rendercv_output
+schema
+template_CV.yaml

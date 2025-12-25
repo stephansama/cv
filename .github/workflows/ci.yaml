@@ -28,7 +28,19 @@ jobs:
           cache: "pnpm"
           node-version-file: ".node-version"
           registry-url: "https://registry.npmjs.org"
+      - name: 🐍 "Set up Python"
+        uses: actions/setup-python@v6
+        with:
+          python-version-file: ".python-version"
+      - name: 🦀 Install uv
+        uses: astral-sh/setup-uv@v7
       - name: 📦 Installing dependencies
         run: pnpm install
-      - name: Create release
+      - name: 🧰 Download schemas
+        run: pnpm build:schema
+      - name: 🔁 Convert from resume.json to rendercv format
+        run: pnpm build:convert
+      - name: 🛠️ Generate rendercv
+        run: pnpm build:cv
+      - name: ↗️ Create release
         run: pnpm run release

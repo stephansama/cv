@@ -8,5 +8,5 @@ dependencies = []
 
 [dependency-groups]
 dev = [
-  "rendercv[full]>=2.5",
+  "rendercv[full]>=2.6",
 ]

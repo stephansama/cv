@@ -301,7 +301,7 @@ wheels = [
 
 [[package]]
 name = "rendercv"
-version = "2.5"
+version = "2.6"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "jinja2" },
@@ -311,9 +311,9 @@ dependencies = [
     { name = "pydantic-extra-types" },
     { name = "ruamel-yaml" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/0d/9b/fb3dd38f4b6de1a61b408a6205681e9b9c2a6cda2a795a45cae3b3d67487/rendercv-2.5.tar.gz", hash = "sha256:7e5b51c7ed4340fa2e78084a3d74aa4784aa3e42e53d585c3c8433082982434b", size = 77147, upload-time = "2025-12-13T09:29:21.088Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/93/19/9a76c4060fcbc994022bc27186bab5b729bf123a433b76f78e530e56444c/rendercv-2.6.tar.gz", hash = "sha256:77e800de17933f451b0c31dc6ade8c61667a7ad7c8e05b8ef8a59321794a1f98", size = 77394, upload-time = "2025-12-23T17:11:13.851Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/1a/c7/86ebd022cac31e22dadacf10feea14dd09dca110b14cc8e0cab247d02b12/rendercv-2.5-py3-none-any.whl", hash = "sha256:1e236438711347526ee04966edab5c4a3cf60ae9a06141d8d3e1984b343b61a5", size = 120362, upload-time = "2025-12-13T09:29:19.51Z" },
+    { url = "https://files.pythonhosted.org/packages/72/1b/7e8967545cb845549988ca03636a504f18bf767159248dbeb0079090f6a9/rendercv-2.6-py3-none-any.whl", hash = "sha256:3280d9bee4b052efb30decafe2a1058e4757ac1faaa36e66127f39202865ee69", size = 121299, upload-time = "2025-12-23T17:11:12.289Z" },
 ]
 
 [package.optional-dependencies]
@@ -347,7 +347,7 @@ dev = [
 [package.metadata]
 
 [package.metadata.requires-dev]
-dev = [{ name = "rendercv", extras = ["full"], specifier = ">=2.5" }]
+dev = [{ name = "rendercv", extras = ["full"], specifier = ">=2.6" }]
 
 [[package]]
 name = "rich"

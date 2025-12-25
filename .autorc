@@ -1,9 +1,17 @@
 {
-  "plugins": [
-    "git-tag"
-  ],
-  "owner": "stephansama",
-  "repo": "resume",
-  "name": "Stephan Randle",
-  "email": "stephanrandle@hotmail.com"
+	"plugins": [
+		"git-tag",
+		"conventional-commits",
+		[
+			"upload-assets",
+			{
+				"assets": ["./rendercv_output/*.pdf", "./rendercv_output/*.png"],
+				"maxAssets": 100
+			}
+		]
+	],
+	"owner": "stephansama",
+	"repo": "cv",
+	"name": "Stephan Randle",
+	"email": "stephanrandle@hotmail.com"
 }

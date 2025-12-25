@@ -15,6 +15,11 @@
 		},
 		"profiles": [
 			{
+				"network": "Bluesky",
+				"username": "stephansama.bsky.social",
+				"url": "https://bsky.app/profile/stephansama.bsky.social"
+			},
+			{
 				"network": "GitHub",
 				"username": "stephansama",
 				"url": "https://github.com/stephansama/stephansama"
