@@ -1,3 +1,15 @@
+# v0.2.0 (Thu Dec 25 2025)
+
+#### 🚀 Enhancement
+
+- feat: automatically update readme when new tag is pushed ([@stephansama](https://github.com/stephansama))
+
+#### Authors: 1
+
+- Stephan Randle ([@stephansama](https://github.com/stephansama))
+
+---
+
 # v0.1.0 (Thu Dec 25 2025)
 
 #### 🚀 Enhancement
