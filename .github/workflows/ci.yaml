@@ -44,3 +44,5 @@ jobs:
         run: pnpm build:cv
       - name: ↗️ Create release
         run: pnpm run release
+      - name: ↗️ Update README
+        run: pnpm run build:readme
