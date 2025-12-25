@@ -7,7 +7,7 @@
 		"email": "stephanrandle@hotmail.com",
 		"phone": "+12488257866",
 		"url": "https://stephansama.info/",
-		"summary": "Richard hails from Tulsa. He has earned degrees from the University of Oklahoma and Stanford. (Go Sooners and Cardinal!) Before starting Pied Piper, he worked for Hooli as a part time software developer. While his work focuses on applied information theory, mostly optimizing lossless compression schema of both the length-limited and adaptive variants, his non-work interests range widely, everything from quantum computing to chaos theory. He could tell you about it, but THAT would NOT be a “length-limited” conversation!",
+		"summary": "Full Stack Web Developer with 3 years of proven expertise in designing and implementing innovative solutions. Skilled in both front-end and back-end technologies, specializing in ReactJS, NodeJS, and database management. Demonstrated success in contributing to the development and deployment of dynamic web applications. Eager to leverage my technical proficiency to drive excellence in cutting-edge projects and contribute to the success of forward-thinking teams. ",
 		"location": {
 			"city": "St. Louis",
 			"countryCode": "US",
@@ -41,20 +41,42 @@
 			}
 		]
 	},
+	"education": [
+		{
+			"institution": "General Assembly",
+			"url": "https://generalassemb.ly/",
+			"area": "Information Technology",
+			"studyType": "Certification",
+			"startDate": "2021-11-01",
+			"endDate": "2022-03-01"
+		},
+		{
+			"institution": "Bloomfield Hills High School",
+			"url": "https://bhhs.bloomfield.org/",
+			"area": "General Studies",
+			"studyType": "High School Diploma",
+			"startDate": "2011-08-01",
+			"endDate": "2015-06-01"
+		}
+	],
 	"work": [
 		{
-			"name": "UWM",
+			"name": "United Wholesale Mortgage (UWM)",
 			"location": "Pontiac, MI",
-			"description": "Awesome compression company",
 			"position": "Software Developer",
 			"url": "https://uwm.com/",
 			"startDate": "2022-08-06",
 			"endDate": "2026-06-19",
-			"summary": "Pied Piper is a multi-platform technology based on a proprietary universal compression algorithm that has consistently fielded high Weisman Scores™ that are not merely competitive, but approach the theoretical limit of lossless compression.",
+			"summary": "UWM is the nation’s largest wholesale mortgage lender, serving independent mortgage brokers across the United States.",
 			"highlights": [
-				"Build an algorithm for artist to detect if their music was violating copy right infringement laws",
-				"Successfully won Techcrunch Disrupt",
-				"Optimized an algorithm that holds the current world record for Weisman Scores"
+				"Developed and maintained responsive, production-grade web applications using Next.js and Node.js.",
+				"Collaborated closely with cross-functional teams to ensure smooth integration across frontend, backend, and CMS systems.",
+				"Led the establishment of coding standards and best practices, improving code quality and consistency while fostering a culture of mentorship and knowledge sharing.",
+				"Integrated data from a .NET (C#) backend and Contentstack CMS, enabling efficient, real-time data flow using standards-based schema validation (Yup, Zod).",
+				"Designed and implemented a system that programmatically mapped Contentstack CMS content to React components, significantly improving development speed and application scalability.",
+				"Built cohesive, accessible UI components using Material UI, ensuring a consistent and polished user experience.",
+				"Authored comprehensive unit and component tests with React Testing Library and Vitest; leveraged Storybook and Zeplin to streamline component development and validation.",
+				"Automated infrastructure and developer workflows by writing scripts for infrastructure-as-code and contributing to monorepo tooling, supporting a vertically sliced microfrontend architecture."
 			]
 		},
 		{
@@ -67,28 +89,9 @@
 			"endDate": "2022-08-06",
 			"summary": "Pied Piper is a multi-platform technology based on a proprietary universal compression algorithm that has consistently fielded high Weisman Scores™ that are not merely competitive, but approach the theoretical limit of lossless compression.",
 			"highlights": [
-				"Build an algorithm for artist to detect if their music was violating copy right infringement laws",
-				"Successfully won Techcrunch Disrupt",
-				"Optimized an algorithm that holds the current world record for Weisman Scores"
+				"Developed and maintained HMI interfaces using FactoryTalk, ensuring user-friendly interactions and seamless integration with control systems.",
+				"Conducted thorough testing and troubleshooting to ensure the reliability and performance of electrical systems. "
 			]
-		}
-	],
-	"education": [
-		{
-			"institution": "General Assembly",
-			"url": "https://generalassemb.ly/",
-			"area": "Information Technology",
-			"studyType": "Certification",
-			"startDate": "2011-06-01",
-			"endDate": "2014-01-01"
-		},
-		{
-			"institution": "Bloomfield Hills High School",
-			"url": "https://bhhs.bloomfield.org/",
-			"area": "General Studies",
-			"studyType": "High School Diploma",
-			"startDate": "2011-08-01",
-			"endDate": "2015-06-01"
 		}
 	],
 	"awards": [
@@ -119,12 +122,16 @@
 		{
 			"name": "Programming",
 			"keywords": ["Vim", "Split-Keyboards"]
+		},
+		{
+			"name": "Media",
+			"keywords": ["Video Editing", "Sound Design"]
 		}
 	],
 	"references": [
 		{
-			"name": "Erlich Bachman",
-			"reference": "It is my pleasure to recommend Richard, his performance working as a consultant for Main St. Company proved that he will be a valuable addition to any company."
+			"name": "Caleb Vandermaas",
+			"reference": "It is my pleasure to recommend Stephan, his performance and dedication to detail is admirable"
 		}
 	],
 	"projects": [
@@ -136,12 +143,12 @@
 				"Built by all women team of newbie programmers",
 				"Using modern technologies such as GoogleMaps, Chrome Extension and Javascript"
 			],
-			"keywords": ["GoogleMaps", "Chrome Extension", "Javascript"],
-			"startDate": "2016-08-24",
-			"endDate": "2016-08-24",
+			"keywords": ["newsletter", "rss feed"],
+			"startDate": "2023-02-01",
+			"endDate": "2026-06-19",
 			"url": "https://blog.stephansama.info/",
-			"roles": ["Team lead", "Designer"],
-			"entity": "Smoogle",
+			"roles": ["Developer"],
+			"entity": "@stephansama",
 			"type": "application"
 		},
 		{
@@ -152,21 +159,21 @@
 				"Built by all women team of newbie programmers",
 				"Using modern technologies such as GoogleMaps, Chrome Extension and Javascript"
 			],
-			"keywords": ["GoogleMaps", "Chrome Extension", "Javascript"],
-			"startDate": "2016-08-24",
-			"endDate": "2016-08-24",
+			"keywords": ["NPM", "JSR", "Changesets", "JavaScript", "TypeScript"],
+			"startDate": "2025-06-10",
+			"endDate": "2026-06-19",
 			"url": "https://github.com/stephansama/packages",
-			"roles": ["Team lead", "Designer"],
-			"entity": "Smoogle",
-			"type": "application"
+			"roles": ["Developer"],
+			"entity": "@stephansama",
+			"type": "library"
 		},
 		{
 			"name": "Actions",
 			"description": "A monorepo of GitHub actions to aid in workflow creation",
 			"highlights": [""],
 			"keywords": ["GitHub Actions", "Monorepo", "Turborepo"],
-			"startDate": "2016-08-24",
-			"endDate": "2016-08-24",
+			"startDate": "2025-07-25",
+			"endDate": "2026-06-19",
 			"url": "https://github.com/stephansama/actions",
 			"roles": ["Developer"],
 			"entity": "stephansama",
@@ -176,7 +183,6 @@
 	"meta": {
 		"canonical": "https://raw.githubusercontent.com/jsonresume/resume-schema/master/sample.resume.json",
 		"version": "v1.0.0",
-		"lastModified": "2017-12-24T15:53:00",
-		"theme": "github-styled"
+		"lastModified": "2017-12-24T15:53:00"
 	}
 }

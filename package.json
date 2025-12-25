@@ -20,10 +20,10 @@
 		"build:www": "resume export $npm_package_config_output_html --theme=$npm_package_config_theme",
 		"dev": "pnpm run --parallel \"/^dev:.*/\"",
 		"dev:cv": "uv run rendercv render --watch $npm_package_config_output_cv",
+		"dev:schema-convert": "tsx watch --include ./resume.json ./scripts/schema-convert.ts",
 		"dev:www": "resume serve --theme=$npm_package_config_theme",
 		"lint": "pnpm run --sequential \"/^lint:.*/\"",
 		"lint:code": "oxlint",
-		"lint:cv": "",
 		"lint:www": "resume validate",
 		"prepare": "husky",
 		"release": "auto shipit"

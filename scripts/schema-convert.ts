@@ -5,12 +5,13 @@ import * as path from "node:path";
 import * as url from "node:url";
 import * as yaml from "yaml";
 import * as z from "zod";
+
 import pkg from "../package.json";
 
 type Resume = z.infer<typeof resume>;
 type ResumeKey = keyof Resume;
 type RenderCV = z.infer<typeof rendercv>;
-type RenderCVSections = RenderCV["cv"]["sections"][string];
+type RenderCvSections = RenderCV["cv"]["sections"][string];
 type RenderCvNetwork = RenderCV["cv"]["social_networks"][number]["network"];
 
 const cwd = path.dirname(url.fileURLToPath(import.meta.url));
@@ -22,6 +23,7 @@ const parsed = resume.parse(input);
 
 const allowedKeys: ResumeKey[] = [
 	"projects",
+	"education",
 	"skills",
 	"work",
 	"volunteer",
@@ -32,7 +34,7 @@ const sections = Object.entries(parsed)
 	.reduce(
 		(acc, [key, value]) => ({
 			...acc,
-			[key]: convertSection(key as ResumeKey, value),
+			[key]: formatSection(key as ResumeKey, value),
 		}),
 		{},
 	);
@@ -59,14 +61,22 @@ const outputFile = yaml.stringify(rendercvInput);
 
 await fsp.writeFile(path.join(root, pkg.config.output_cv), outputFile);
 
-function convertSection<Section extends keyof Resume>(
+function formatSection<Section extends keyof Resume>(
 	key: Section,
 	value: Resume[Section],
-): RenderCVSections {
+): RenderCvSections {
 	switch (key) {
+		case "education":
+			return (value as Resume["education"]).map((e) => ({
+				institution: e.institution,
+				area: e.area,
+				degree: formatStudyType(e.studyType),
+				start_date: e.startDate,
+				end_date: e.endDate,
+			}));
 		case "projects":
 			return (value as Resume["projects"]).map((v) => ({
-				name: v.name,
+				name: `[${v.name}](${v.url})`,
 				start_date: v.startDate,
 				end_date: v.endDate,
 				summary: v.description,
@@ -75,7 +85,7 @@ function convertSection<Section extends keyof Resume>(
 		case "skills":
 			return (value as Resume["skills"]).map((v) => ({
 				label: v.name,
-				details: v.keywords.join(","),
+				details: v.keywords.join(", "),
 			}));
 		case "work":
 			return (value as Resume["work"]).map((v) => ({
@@ -88,6 +98,14 @@ function convertSection<Section extends keyof Resume>(
 				highlights: v.highlights,
 			}));
 		default:
-			return [];
+			throw new Error(`no implementation found for key ${key}`);
 	}
+}
+
+function formatStudyType(studyType: string) {
+	const formatter = {
+		"Certification": "Cert",
+		"High School Diploma": "HS",
+	};
+	return formatter[studyType as keyof typeof formatter] || studyType;
 }

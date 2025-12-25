@@ -14,23 +14,21 @@ const SEPARATOR = "<!-- images -->";
 const REPO = process.env.GITHUB_REPOSITORY || "stephansama/cv";
 const TOKEN = process.env.GITHUB_TOKEN;
 
-const images = (await fsp.readdir(path.join(CWD, "../rendercv_output")))
+const cvImages = (await fsp.readdir(path.join(CWD, "../rendercv_output")))
 	.filter((file) => file.endsWith("png"))
 	.map((file) => path.basename(file));
 
 const readmePath = path.join(CWD, "../README.md");
 const readmeFile = await fsp.readFile(readmePath, "utf8");
 const readmeLines = readmeFile.split("\n");
-const separatorIndex = readmeLines.findIndex((line) =>
-	line.includes(SEPARATOR),
-);
+const separatorIndex = readmeLines.findIndex((l) => l.includes(SEPARATOR));
 
 if (process.env.CI) await setupGit();
 
 const currentTag = await getLatestGitTag();
 
 const prefix = readmeLines.slice(0, separatorIndex + 1).join("\n");
-const suffix = images
+const suffix = cvImages
 	.map(
 		(image) =>
 			`![${image}](https://github.com/${REPO}/releases/download/${currentTag}/${image})`,
@@ -44,8 +42,7 @@ await fsp.writeFile(readmePath, body);
 if (process.env.CI) await pushCommit();
 
 async function getLatestGitTag() {
-	const { stdout } = await sh`git describe --tags --abbrev=0`;
-	return stdout.trim();
+	return (await sh`git describe --tags --abbrev=0`).stdout.trim();
 }
 
 async function pushCommit() {
