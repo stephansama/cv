@@ -1,3 +1,19 @@
+# v0.2.2 (Thu Dec 25 2025)
+
+#### 🐛 Bug Fix
+
+- fix: updated content ([@stephansama](https://github.com/stephansama))
+
+#### ⚠️ Pushed to `main`
+
+- Updated CV Readme ([@stephansama](https://github.com/stephansama))
+
+#### Authors: 1
+
+- Stephan Randle ([@stephansama](https://github.com/stephansama))
+
+---
+
 # v0.2.1 (Thu Dec 25 2025)
 
 #### 🐛 Bug Fix
