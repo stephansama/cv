@@ -5,8 +5,7 @@
 		[
 			"upload-assets",
 			{
-				"assets": ["./rendercv_output/*.pdf", "./rendercv_output/*.png"],
-				"maxAssets": 100
+				"assets": ["./rendercv_output/*.pdf", "./rendercv_output/*.png"]
 			}
 		]
 	],
