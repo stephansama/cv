@@ -26,7 +26,9 @@
 		"lint:code": "oxlint",
 		"lint:www": "resume validate",
 		"prepare": "husky",
-		"release": "auto shipit"
+		"release": "auto shipit",
+		"spy:init": "uv run ./scripts/spy.py",
+		"spy:sync": "tsx ./scripts/spy-sync.ts"
 	},
 	"config": {
 		"output_cv": "rendercv.yaml",
