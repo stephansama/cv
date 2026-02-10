@@ -25,8 +25,14 @@ export const jobSpySchema = z.object({
 		.enum(["yearly", "monthly", "weekly", "daily", "hourly"])
 		.optional()
 		.nullable(),
-	min_amount: z.string().nullable(),
-	max_amount: z.string().nullable(),
+	min_amount: z
+		.string()
+		.nullable()
+		.transform((a) => parseInt(a || "0")),
+	max_amount: z
+		.string()
+		.nullable()
+		.transform((a) => parseInt(a || "0")),
 	currency: z.string().nullable(),
 	is_remote: z.boolean().nullable(),
 	description: z.string().optional().nullable(),

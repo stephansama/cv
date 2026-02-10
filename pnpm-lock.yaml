@@ -43,8 +43,8 @@ importers:
         specifier: ^0.1.4
         version: 0.1.4
       '@stephansama/typed-nocodb-api':
-        specifier: ^0.1.0
-        version: 0.1.0(zod@4.2.1)
+        specifier: https://pkg.pr.new/stephansama/packages/@stephansama/typed-nocodb-api@205
+        version: https://pkg.pr.new/stephansama/packages/@stephansama/typed-nocodb-api@205(zod@4.2.1)
       '@types/node':
         specifier: ^25.0.3
         version: 25.0.3
@@ -536,8 +536,9 @@ packages:
   '@stephansama/github-env@0.1.4':
     resolution: {integrity: sha512-fGWaWgKsTK3Ql8RrT5v59JxZn6GvkX0XBt4/hhxEq9VV62/e57bNCOly+ghLbwIu/e+enYLZzcjnxgiBZaNfwA==}
 
-  '@stephansama/typed-nocodb-api@0.1.0':
-    resolution: {integrity: sha512-5sTCL01+BQfAcZeGTiNgxQR9pB/ZREHeJRpGpWrzH4Z3nwWgr33MWFQjdYjakpCEVSBbDSacWlXKT2aotD6etA==}
+  '@stephansama/typed-nocodb-api@https://pkg.pr.new/stephansama/packages/@stephansama/typed-nocodb-api@205':
+    resolution: {tarball: https://pkg.pr.new/stephansama/packages/@stephansama/typed-nocodb-api@205}
+    version: 0.2.0
     peerDependencies:
       zod: 4.2.1
 
@@ -4537,7 +4538,7 @@ snapshots:
 
   '@stephansama/github-env@0.1.4': {}
 
-  '@stephansama/typed-nocodb-api@0.1.0(zod@4.2.1)':
+  '@stephansama/typed-nocodb-api@https://pkg.pr.new/stephansama/packages/@stephansama/typed-nocodb-api@205(zod@4.2.1)':
     dependencies:
       zod: 4.2.1
 

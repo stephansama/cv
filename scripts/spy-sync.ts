@@ -16,7 +16,7 @@ const envSchema = z.object({
 
 const env = envSchema.parse(process.env);
 
-const careersApi = createApi({
+const companiesApi = createApi({
 	token: env.NOCODB_TOKEN,
 	baseId: env.NOCODB_CAREERS_BASE,
 	origin: env.NOCODB_URL,
@@ -25,10 +25,8 @@ const careersApi = createApi({
 		"name": z.string(),
 		"description": z.string(),
 		"url": z.string(),
-		"careers page": z.string(),
-		"jobs": z.object({
-			id: z.number(),
-		}),
+		"careers page": z.string().optional().nullable(),
+		"jobs": z.number().optional().nullable(),
 	}),
 });
 
@@ -42,10 +40,15 @@ const jobApi = createApi({
 		"url": z.string(),
 		"min salary": z.number(),
 		"max salary": z.number(),
-		"company": z.object({ id: z.number() }),
 		"follow up": z.string().optional().nullable(),
 		"type": z.enum(["fulltime", "parttime", "internship", "contract"]),
-		"pay_interval": z.enum(["yearly", "monthly", "daily", "hourly"]),
+		"pay_interval": z.enum([
+			"yearly",
+			"monthly",
+			"weekly",
+			"daily",
+			"hourly",
+		]),
 		"stage": z.enum([
 			"interested",
 			"applied",
@@ -77,16 +80,54 @@ const companies = Object.fromEntries(
 	]),
 );
 
-const nocodbList = await jobApi.fetch({ action: "LIST" });
+const nocodbCompanyList = await companiesApi.fetch({ action: "LIST" });
+const missingCompanies = Object.entries(companies).filter(([name]) => {
+	return !nocodbCompanyList.records.some(
+		(record) => record.fields.name === name,
+	);
+});
+
+for (const [missingName, missingValue] of missingCompanies) {
+	await companiesApi.fetch({
+		action: "CREATE",
+		body: {
+			fields: {
+				name: missingName,
+				url: missingValue.url || "",
+				description: missingValue.description || "",
+			},
+		},
+	});
+}
+
+const nocodbJobList = await jobApi.fetch({ action: "LIST" });
 
 await fsp.writeFile(
 	"./output.json",
-	JSON.stringify(nocodbList, undefined, 2),
+	JSON.stringify(nocodbJobList, undefined, 2),
 	"utf8",
 );
 
-// Find companies from scraped jobs
-// List saved companies
-// save companies not in the list
-// List saved jobs
-// save jobs not in the list with company id
+const missingJobs = foundPositions.filter((position) => {
+	return !nocodbJobList.records.some(
+		(record) => record.fields["position title"] === position.title,
+	);
+});
+
+for (const missingJob of missingJobs) {
+	await jobApi.fetch({
+		action: "CREATE",
+		body: {
+			fields: {
+				"stage": "interested",
+				"position title": missingJob.title,
+				"url": missingJob.job_url_direct || missingJob.job_url,
+				"source": missingJob.site,
+				"type": missingJob.job_type || "fulltime",
+				"min salary": missingJob.min_amount,
+				"max salary": missingJob.max_amount,
+				"pay_interval": missingJob.interval || "yearly",
+			},
+		},
+	});
+}
