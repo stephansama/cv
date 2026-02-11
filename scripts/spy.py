@@ -1,10 +1,11 @@
 from jobspy import scrape_jobs
+import os
 
 jobs = scrape_jobs(
     site_name=["indeed", "linkedin", "zip_recruiter", "google", "glassdoor"],
-    search_term="frontend developer",
-    google_search_term="software engineer jobs near Detroit, MI since yesterday",
-    location="Detroit, MI",
+    search_term=os.getenv("SEARCH_TERM"),
+    google_search_term=os.getenv("GOOGLE_SEARCH_TERM"),
+    location=os.getenv("LOCATION"),
     is_remote=True,
     results_wanted=20,
     hours_old=72,
@@ -12,6 +13,7 @@ jobs = scrape_jobs(
     # linkedin_fetch_description=True # gets more info such as description, direct job url (slower)
     # proxies=["208.195.175.46:65095", "208.195.175.45:65095", "localhost"],
 )
+
 print(f"Found {len(jobs)} jobs")
 print(jobs.head())
 

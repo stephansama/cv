@@ -102,12 +102,6 @@ for (const [missingName, missingValue] of missingCompanies) {
 
 const nocodbJobList = await jobApi.fetch({ action: "LIST" });
 
-await fsp.writeFile(
-	"./output.json",
-	JSON.stringify(nocodbJobList, undefined, 2),
-	"utf8",
-);
-
 const missingJobs = foundPositions.filter((position) => {
 	return !nocodbJobList.records.some(
 		(record) => record.fields["position title"] === position.title,

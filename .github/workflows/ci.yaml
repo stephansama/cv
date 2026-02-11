@@ -10,6 +10,14 @@ env:
   ZX_VERBOSE: true
   DO_NOT_TRACK: 1
   GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+  GOOGLE_SEARCH_TERM: ${{variables.GOOGLE_SEARCH_TERM}}
+  SEARCH_TERM: ${{variables.SEARCH_TERM}}
+  LOCATION: ${{variables.LOCATION}}
+  NOCODB_CAREERS_BASE: ${{variables.NOCODB_CAREERS_BASE}}
+  NOCODB_COMPANY_TABLE: ${{variables.NOCODB_COMPANY_TABLE}}
+  NOCODB_JOB_TABLE: ${{variables.NOCODB_JOB_TABLE}}
+  NOCODB_TOKEN: ${{secrets.NOCODB_TOKEN}}
+  NOCODB_URL: ${{variables.NOCODB_URL}}
 permissions:
   contents: write
   id-token: write
