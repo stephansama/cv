@@ -46,6 +46,12 @@ async function getLatestGitTag() {
 }
 
 async function pushCommit() {
+	const hasChanges = await sh` git diff --cached --quiet `
+		.then(() => false)
+		.catch(() => true);
+
+	if (!hasChanges) return console.info("no changes to commit");
+
 	await sh` git add README.md `;
 	await sh` git commit -m "Updated CV Readme" `;
 	await sh` git push `;

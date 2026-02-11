@@ -1,15 +1,19 @@
-name: CI
+name: spy
 on:
-  pull_request:
-    branches: [main]
-  push:
-    branches: [main]
   workflow_dispatch:
 env:
   HUSKY: 0
   ZX_VERBOSE: true
   DO_NOT_TRACK: 1
   GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+  GOOGLE_SEARCH_TERM: ${{vars.GOOGLE_SEARCH_TERM}}
+  SEARCH_TERM: ${{vars.SEARCH_TERM}}
+  LOCATION: ${{vars.LOCATION}}
+  NOCODB_CAREERS_BASE: ${{vars.NOCODB_CAREERS_BASE}}
+  NOCODB_COMPANY_TABLE: ${{vars.NOCODB_COMPANY_TABLE}}
+  NOCODB_JOB_TABLE: ${{vars.NOCODB_JOB_TABLE}}
+  NOCODB_TOKEN: ${{secrets.NOCODB_TOKEN}}
+  NOCODB_URL: ${{vars.NOCODB_URL}}
 permissions:
   contents: write
   id-token: write
@@ -17,14 +21,13 @@ permissions:
   pull-requests: write
 concurrency: ${{github.workflow}}-${{github.ref}}
 jobs:
-  ci:
-    name: CI
+  spy:
+    name: Spy
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
         with:
           fetch-depth: 0
-          ref: ${{ github.head_ref }}
       - uses: pnpm/action-setup@v4
       - uses: actions/setup-node@v4
         with:
@@ -39,11 +42,7 @@ jobs:
         uses: astral-sh/setup-uv@v7
       - name: 📦 Installing dependencies
         run: pnpm install
-      - name: 🧰 Download schemas
-        run: pnpm build:schema
-      - name: 🛠️ Generate rendercv
-        run: pnpm build:cv
-      - name: ↗️ Create release
-        run: pnpm run release
-      - name: ↗️ Update README
-        run: pnpm run build:readme
+      - name: 🕵️ Generate Leads
+        run: pnpm run spy:init
+      - name: 🛠️ Sync to nocodb
+        run: pnpm run spy:sync
