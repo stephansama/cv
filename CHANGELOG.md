@@ -1,3 +1,27 @@
+# v0.2.3 (Wed Feb 11 2026)
+
+#### 🐛 Bug Fix
+
+- fix: schema ([@stephansama](https://github.com/stephansama))
+- chore: updated workflows added condition for updating readme [#1](https://github.com/stephansama/cv/pull/1) ([@stephansama](https://github.com/stephansama))
+- chore: updated workflow to valid variable name [#1](https://github.com/stephansama/cv/pull/1) ([@stephansama](https://github.com/stephansama))
+- chore: updated implementation [#1](https://github.com/stephansama/cv/pull/1) ([@stephansama](https://github.com/stephansama))
+- chore: updated ci yaml workflow [#1](https://github.com/stephansama/cv/pull/1) ([@stephansama](https://github.com/stephansama))
+- chore: connected script [#1](https://github.com/stephansama/cv/pull/1) ([@stephansama](https://github.com/stephansama))
+- chore: dogfooded nocodb api [#1](https://github.com/stephansama/cv/pull/1) ([@stephansama](https://github.com/stephansama))
+- chore: initial commit [#1](https://github.com/stephansama/cv/pull/1) ([@stephansama](https://github.com/stephansama))
+- chore: add jobspy dependency [#1](https://github.com/stephansama/cv/pull/1) ([@stephansama](https://github.com/stephansama))
+
+#### ⚠️ Pushed to `main`
+
+- Updated CV Readme ([@stephansama](https://github.com/stephansama))
+
+#### Authors: 1
+
+- Stephan Randle ([@stephansama](https://github.com/stephansama))
+
+---
+
 # v0.2.2 (Thu Dec 25 2025)
 
 #### 🐛 Bug Fix
