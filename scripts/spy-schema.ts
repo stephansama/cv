@@ -11,7 +11,7 @@ export const jobSpySchema = z.object({
 		"glassdoor",
 	]),
 	company: z.string(),
-	date_posted: z.number(),
+	date_posted: z.number().nullable(),
 	job_url: z.string(),
 	job_url_direct: z.string().nullable(),
 	location: z.string().nullable(),
