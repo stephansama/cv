@@ -1,0 +1,4 @@
+#!/bin/sh
+
+ai-commit-msg -o "$1"
+

@@ -5,16 +5,9 @@ import * as z from "zod";
 import * as schema from "./spy-schema";
 
 import { createApi } from "@stephansama/typed-nocodb-api";
+import { envConfig } from "./env";
 
-const envSchema = z.object({
-	NOCODB_COMPANY_TABLE: z.string().min(1),
-	NOCODB_CAREERS_BASE: z.string().min(1),
-	NOCODB_JOB_TABLE: z.string().min(1),
-	NOCODB_TOKEN: z.string().min(1),
-	NOCODB_URL: z.string().min(1),
-});
-
-const env = envSchema.parse(process.env);
+const env = await envConfig.validate();
 
 const companiesApi = createApi({
 	token: env.NOCODB_TOKEN,
@@ -81,6 +74,7 @@ const companies = Object.fromEntries(
 );
 
 const nocodbCompanyList = await companiesApi.fetch({ action: "LIST" });
+
 const missingCompanies = Object.entries(companies).filter(([name]) => {
 	return !nocodbCompanyList.records.some(
 		(record) => record.fields.name === name,
