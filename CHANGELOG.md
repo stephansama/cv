@@ -1,3 +1,19 @@
+# v0.3.0 (Mon Feb 16 2026)
+
+#### 🚀 Enhancement
+
+- feat(config): add ai commit msg config and husky hook ([@stephansama](https://github.com/stephansama))
+
+#### ⚠️ Pushed to `main`
+
+- chore: updated schema ([@stephansama](https://github.com/stephansama))
+
+#### Authors: 1
+
+- Stephan Randle ([@stephansama](https://github.com/stephansama))
+
+---
+
 # v0.2.3 (Wed Feb 11 2026)
 
 #### 🐛 Bug Fix
