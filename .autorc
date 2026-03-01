@@ -1,7 +1,7 @@
 {
 	"plugins": [
 		"git-tag",
-		"conventional-commits",
+    ["conventional-commits", { "defaultReleaseType": "patch" }],
 		[
 			"upload-assets",
 			{
