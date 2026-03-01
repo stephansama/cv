@@ -8,5 +8,5 @@
 
 <!-- images -->
 
-![Stephan_Randle_CV_1.png](https://github.com/stephansama/cv/releases/download/v0.4.0/Stephan_Randle_CV_1.png)
-![Stephan_Randle_CV_2.png](https://github.com/stephansama/cv/releases/download/v0.4.0/Stephan_Randle_CV_2.png)
+![Stephan_Randle_CV_1.png](https://github.com/stephansama/cv/releases/download/v0.5.0/Stephan_Randle_CV_1.png)
+![Stephan_Randle_CV_2.png](https://github.com/stephansama/cv/releases/download/v0.5.0/Stephan_Randle_CV_2.png)
