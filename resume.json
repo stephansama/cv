@@ -2,12 +2,12 @@
 	"$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
 	"basics": {
 		"name": "Stephan Randle",
-		"label": "Programmer",
+		"label": "Full-Stack Engineer | TypeScript, Next.js, Systems-Oriented Web Architecture",
 		"image": "",
 		"email": "stephanrandle@hotmail.com",
 		"phone": "+12488257866",
 		"url": "https://stephansama.info/",
-		"summary": "Full Stack Web Developer with 3 years of proven expertise in designing and implementing innovative solutions. Skilled in both front-end and back-end technologies, specializing in ReactJS, NodeJS, and database management. Demonstrated success in contributing to the development and deployment of dynamic web applications. Eager to leverage my technical proficiency to drive excellence in cutting-edge projects and contribute to the success of forward-thinking teams. ",
+		"summary": "Full-Stack Engineer specializing in TypeScript-driven architectures, high-performance frontends, and scalable monorepo systems. Experienced in building production-grade applications with Next.js, Node.js, and modern content platforms. Strong focus on developer experience, automation, testing, and long-term maintainability. Passionate about functional programming patterns, CI/CD optimization, and performance-first web engineering.",
 		"location": {
 			"city": "St. Louis",
 			"countryCode": "US",
@@ -63,20 +63,19 @@
 		{
 			"name": "United Wholesale Mortgage (UWM)",
 			"location": "Pontiac, MI",
-			"position": "Software Developer",
+			"position": "Software Engineer",
 			"url": "https://uwm.com/",
 			"startDate": "2022-08-06",
 			"endDate": "2026-06-19",
 			"summary": "UWM is the nation’s largest wholesale mortgage lender, serving independent mortgage brokers across the United States.",
 			"highlights": [
-				"Developed and maintained responsive, production-grade web applications using Next.js and Node.js.",
-				"Collaborated closely with cross-functional teams to ensure smooth integration across frontend, backend, and CMS systems.",
-				"Led the establishment of coding standards and best practices, improving code quality and consistency while fostering a culture of mentorship and knowledge sharing.",
-				"Integrated data from a .NET (C#) backend and Contentstack CMS, enabling efficient, real-time data flow using standards-based schema validation (Yup, Zod).",
-				"Designed and implemented a system that programmatically mapped Contentstack CMS content to React components, significantly improving development speed and application scalability.",
-				"Built cohesive, accessible UI components using Material UI, ensuring a consistent and polished user experience.",
-				"Authored comprehensive unit and component tests with React Testing Library and Vitest; leveraged Storybook and Zeplin to streamline component development and validation.",
-				"Automated infrastructure and developer workflows by writing scripts for infrastructure-as-code and contributing to monorepo tooling, supporting a vertically sliced microfrontend architecture."
+				"Architected and maintained production-grade Next.js applications serving enterprise-scale users.",
+				"Designed schema-validated data flows between a .NET (C#) backend and Contentstack CMS using Zod and Yup, improving runtime reliability and type safety.",
+				"Built a dynamic CMS-to-component rendering engine that programmatically mapped content models to React components, significantly accelerating feature delivery.",
+				"Led frontend standards adoption across teams, improving code consistency, accessibility compliance, and testing coverage.",
+				"Developed reusable, accessible UI systems with Material UI and Storybook, reducing duplicated logic and design drift.",
+				"Authored unit and component tests with Vitest and React Testing Library to ensure regression safety in CI pipelines.",
+				"Contributed to monorepo tooling and infrastructure automation, supporting a scalable microfrontend architecture."
 			]
 		},
 		{
@@ -87,33 +86,38 @@
 			"url": "https://axys.global/",
 			"startDate": "2019-06-01",
 			"endDate": "2022-08-06",
-			"summary": "Pied Piper is a multi-platform technology based on a proprietary universal compression algorithm that has consistently fielded high Weisman Scores™ that are not merely competitive, but approach the theoretical limit of lossless compression.",
+			"summary": "",
 			"highlights": [
-				"Developed and maintained HMI interfaces using FactoryTalk, ensuring user-friendly interactions and seamless integration with control systems.",
-				"Conducted thorough testing and troubleshooting to ensure the reliability and performance of electrical systems. "
+				"Developed and deployed industrial HMI interfaces using FactoryTalk, improving operator usability and system reliability.",
+				"Performed field troubleshooting and validation of control systems, strengthening cross-disciplinary problem-solving skills.",
+				"Collaborated with mechanical and software teams to ensure safe and reliable system integration in production environments."
 			]
-		}
-	],
-	"awards": [
-		{
-			"title": "Digital Compression Pioneer Award",
-			"date": "2014-11-01",
-			"awarder": "Techcrunch",
-			"summary": "There is no spoon."
 		}
 	],
 	"skills": [
 		{
-			"name": "Web Development",
-			"level": "Master",
+			"name": "Frontend & Application Architecture",
 			"keywords": [
-				"HTML",
-				"PostCSS / TailwindCSS",
-				"JavaScript / TypeScript",
-				"Jest / Vitest",
-				"React / NextJS",
+				"TypeScript",
+				"React",
+				"Next.js",
 				"Astro",
-				"Content Management Systems"
+				"TailwindCSS",
+				"Zod",
+				"Vitest",
+				"Storybook"
+			]
+		},
+		{
+			"name": "Backend & Tooling",
+			"keywords": [
+				"Node.js",
+				"tRPC",
+				"Functional Error Handling",
+				"Monorepos (Turborepo)",
+				"pnpm",
+				"CI/CD",
+				"GitHub Actions"
 			]
 		}
 	],
@@ -136,47 +140,52 @@
 	],
 	"projects": [
 		{
-			"name": "Blog",
-			"description": "A mapping engine that misguides you",
+			"name": "Technical Blog Platform",
+			"description": "High-performance static site platform built with Astro and content collections.",
 			"highlights": [
-				"Won award at AIHacks 2016",
-				"Built by all women team of newbie programmers",
-				"Using modern technologies such as GoogleMaps, Chrome Extension and Javascript"
+				"Designed a content-driven blog using Astro, TailwindCSS, and GSAP for performance-first animation.",
+				"Integrated CMS tooling and asset pipelines for scalable content publishing.",
+				"Implemented Lighthouse CI monitoring and performance budgets.",
+				"Optimized build outputs across multiple static sites within a Turborepo monorepo."
 			],
-			"keywords": ["newsletter", "rss feed"],
+			"keywords": ["Astro", "TypeScript", "Turborepo", "CI/CD", "Performance"],
 			"startDate": "2023-02-01",
-			"endDate": "2026-06-19",
 			"url": "https://blog.stephansama.info/",
-			"roles": ["Developer"],
-			"entity": "@stephansama",
+			"roles": ["Architect", "Developer"],
 			"type": "application"
 		},
 		{
-			"name": "Packages",
-			"description": "A mapping engine that misguides you",
+			"name": "TypeScript Packages Monorepo",
+			"description": "Monorepo of reusable TypeScript libraries published to npm and JSR.",
 			"highlights": [
-				"Won award at AIHacks 2016",
-				"Built by all women team of newbie programmers",
-				"Using modern technologies such as GoogleMaps, Chrome Extension and Javascript"
+				"Structured and maintained a Turborepo-powered monorepo using pnpm workspaces.",
+				"Automated versioning and releases using Changesets and GitHub Actions.",
+				"Focused on type-safe APIs and functional error handling patterns."
 			],
-			"keywords": ["NPM", "JSR", "Changesets", "JavaScript", "TypeScript"],
+			"keywords": [
+				"TypeScript",
+				"Turborepo",
+				"pnpm",
+				"Changesets",
+				"GitHub Actions"
+			],
 			"startDate": "2025-06-10",
-			"endDate": "2026-06-19",
 			"url": "https://github.com/stephansama/packages",
-			"roles": ["Developer"],
-			"entity": "@stephansama",
+			"roles": ["Maintainer"],
 			"type": "library"
 		},
 		{
-			"name": "Actions",
-			"description": "A monorepo of GitHub actions to aid in workflow creation",
-			"highlights": [""],
-			"keywords": ["GitHub Actions", "Monorepo", "Turborepo"],
+			"name": "Custom GitHub Actions Suite",
+			"description": "Reusable GitHub Actions for CI automation and monorepo workflows.",
+			"highlights": [
+				"Built composite and JavaScript-based GitHub Actions to streamline CI/CD pipelines.",
+				"Optimized deployment workflows for multi-package monorepos.",
+				"Reduced CI runtime and improved build reliability across projects."
+			],
+			"keywords": ["GitHub Actions", "CI/CD", "Automation", "Monorepo"],
 			"startDate": "2025-07-25",
-			"endDate": "2026-06-19",
 			"url": "https://github.com/stephansama/actions",
-			"roles": ["Developer"],
-			"entity": "stephansama",
+			"roles": ["Maintainer"],
 			"type": "library"
 		}
 	],
