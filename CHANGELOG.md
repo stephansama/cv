@@ -1,3 +1,15 @@
+# v0.3.2 (Sun Mar 01 2026)
+
+#### 🐛 Bug Fix
+
+- chore(readme): update readme commit message ([@stephansama](https://github.com/stephansama))
+
+#### Authors: 1
+
+- Stephan Randle ([@stephansama](https://github.com/stephansama))
+
+---
+
 # v0.3.1 (Sun Mar 01 2026)
 
 #### 🐛 Bug Fix
