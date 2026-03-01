@@ -1,3 +1,19 @@
+# v0.3.3 (Sun Mar 01 2026)
+
+#### 🐛 Bug Fix
+
+- chore(theme): update jsonresume theme to catppuccin ([@stephansama](https://github.com/stephansama))
+
+#### ⚠️ Pushed to `main`
+
+- Updated CV Readme ([@stephansama](https://github.com/stephansama))
+
+#### Authors: 1
+
+- Stephan Randle ([@stephansama](https://github.com/stephansama))
+
+---
+
 # v0.3.2 (Sun Mar 01 2026)
 
 #### 🐛 Bug Fix
