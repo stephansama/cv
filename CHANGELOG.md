@@ -1,3 +1,19 @@
+# v0.4.0 (Sun Mar 01 2026)
+
+#### 🚀 Enhancement
+
+- feat(resume): add github image url ([@stephansama](https://github.com/stephansama))
+
+#### ⚠️ Pushed to `main`
+
+- Updated CV Readme ([@stephansama](https://github.com/stephansama))
+
+#### Authors: 1
+
+- Stephan Randle ([@stephansama](https://github.com/stephansama))
+
+---
+
 # v0.3.3 (Sun Mar 01 2026)
 
 #### 🐛 Bug Fix
