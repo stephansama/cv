@@ -1,3 +1,16 @@
+# v0.3.1 (Sun Mar 01 2026)
+
+#### 🐛 Bug Fix
+
+- chore(build): update conventional-commits plugin config ([@stephansama](https://github.com/stephansama))
+- docs(resume): update label and summary with full-stack engineering focus ([@stephansama](https://github.com/stephansama))
+
+#### Authors: 1
+
+- Stephan Randle ([@stephansama](https://github.com/stephansama))
+
+---
+
 # v0.3.0 (Mon Feb 16 2026)
 
 #### 🚀 Enhancement
