@@ -1,3 +1,19 @@
+# v0.5.0 (Sun Mar 01 2026)
+
+#### 🚀 Enhancement
+
+- feat(package): add cheerio and related dependencies for og image generation ([@stephansama](https://github.com/stephansama))
+
+#### ⚠️ Pushed to `main`
+
+- Updated CV Readme ([@stephansama](https://github.com/stephansama))
+
+#### Authors: 1
+
+- Stephan Randle ([@stephansama](https://github.com/stephansama))
+
+---
+
 # v0.4.0 (Sun Mar 01 2026)
 
 #### 🚀 Enhancement
