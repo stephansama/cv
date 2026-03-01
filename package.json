@@ -18,7 +18,9 @@
 		"build:schema--patch": "tsx ./scripts/schema-patch.ts",
 		"build:schema-convert": "tsx ./scripts/schema-convert.ts",
 		"build:www": "resume export $npm_package_config_output_html --theme=$npm_package_config_theme",
+		"postbuild:www": "tsx ./scripts/add-og.ts",
 		"dev": "pnpm run --parallel \"/^dev:.*/\"",
+		"dev:add-og": "tsx watch ./scripts/add-og.ts",
 		"dev:cv": "uv run rendercv render --watch $npm_package_config_output_cv",
 		"dev:schema-convert": "tsx watch --include ./resume.json ./scripts/schema-convert.ts",
 		"dev:www": "resume serve --theme=$npm_package_config_theme",
@@ -41,6 +43,7 @@
 		"@auto-it/git-tag": "^11.3.6",
 		"@auto-it/upload-assets": "^11.3.6",
 		"auto": "^11.3.6",
+		"cheerio": "^1.2.0",
 		"jsonresume-theme-catppuccin": "^1.0.1",
 		"resume-cli": "^3.1.2"
 	},
