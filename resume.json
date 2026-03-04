@@ -25,19 +25,24 @@
 				"url": "https://github.com/stephansama/stephansama"
 			},
 			{
+				"network": "Leetcode",
+				"username": "stephansama",
+				"url": "https://leetcode.com/u/stephansama/"
+			},
+			{
 				"network": "LinkedIn",
 				"username": "stephan-randle-38a30319a",
 				"url": "https://www.linkedin.com/in/stephan-randle-38a30319a/"
 			},
 			{
+				"network": "NPM",
+				"username": "stephansama",
+				"url": "https://npmx.dev/~stephansama"
+			},
+			{
 				"network": "YouTube",
 				"username": "stephansama",
 				"url": "https://www.youtube.com/@stephansama"
-			},
-			{
-				"network": "Leetcode",
-				"username": "stephansama",
-				"url": "https://leetcode.com/u/stephansama/"
 			}
 		]
 	},

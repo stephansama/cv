@@ -44,7 +44,7 @@
 		"@auto-it/upload-assets": "^11.3.6",
 		"auto": "^11.3.6",
 		"cheerio": "^1.2.0",
-		"jsonresume-theme-catppuccin": "^1.0.1",
+		"jsonresume-theme-catppuccin": "npm:@stephansama/catppuccin-jsonresume-theme@^1.0.0",
 		"resume-cli": "^3.1.2"
 	},
 	"devDependencies": {
