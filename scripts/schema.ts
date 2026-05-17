@@ -9,6 +9,8 @@ import * as url from "node:url";
 const dirname = path.dirname(url.fileURLToPath(import.meta.url));
 const output = path.join(dirname, "../schema/");
 
+await fs.promises.mkdir(output);
+
 const renderCvJsonSchema = await ky
 	.get(
 		`https://raw.githubusercontent.com/rendercv/rendercv/refs/tags/v2.6/schema.json`,
