@@ -1,11 +1,17 @@
 {
-	"include": ["schema", "scripts"],
+	"include": [
+		"schema",
+		"scripts",
+		".config/**/*",
+		".config/.commitlintrc.ts",
+		"eslint.config.ts"
+	],
 	"compilerOptions": {
-		"baseUrl": ".",
 		"target": "esnext",
 		"moduleResolution": "bundler",
 		"module": "esnext",
 		"paths": {
+			"*": ["./*"],
 			"@schema/*": ["./schema/*"]
 		}
 	}

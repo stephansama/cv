@@ -1,25 +1,26 @@
 import rendercv from "@schema/rendercv";
 import resume from "@schema/resume";
 import * as fsp from "node:fs/promises";
-import * as path from "node:path";
+import path from "node:path";
 import * as url from "node:url";
 import * as yaml from "yaml";
 import * as z from "zod";
 
 import pkg from "../package.json";
 
+type RenderCV = z.infer<typeof rendercv>;
+type RenderCvNetwork = NonNullable<
+	NonNullable<RenderCV["cv"]>["social_networks"]
+>[number]["network"];
+type RenderCvSections = NonNullable<RenderCV["cv"]>["sections"][string];
 type Resume = z.infer<typeof resume>;
 type ResumeKey = keyof Resume;
-type RenderCV = z.infer<typeof rendercv>;
-type RenderCvSections = RenderCV["cv"]["sections"][string];
-type RenderCvNetwork = RenderCV["cv"]["social_networks"][number]["network"];
 
 const cwd = path.dirname(url.fileURLToPath(import.meta.url));
 const root = path.dirname(path.join(cwd, "../package.json"));
 const inputPath = path.join(cwd, "../resume.json");
 const inputRaw = await fsp.readFile(inputPath, "utf8");
-const input = JSON.parse(inputRaw);
-const parsed = resume.parse(input);
+const parsed = resume.parse(JSON.parse(inputRaw));
 
 const allowedKeys: ResumeKey[] = [
 	"projects",
@@ -29,31 +30,28 @@ const allowedKeys: ResumeKey[] = [
 	"volunteer",
 ] as const;
 
-const sections = Object.entries(parsed)
-	.filter(([key]) => allowedKeys.includes(key as ResumeKey))
-	.reduce(
-		(acc, [key, value]) => ({
-			...acc,
-			[key]: formatSection(key as ResumeKey, value),
-		}),
-		{},
-	);
+const sections = Object.fromEntries(
+	Object.entries(parsed)
+		.filter(([key]) => allowedKeys.includes(key as ResumeKey))
+		.map(([key, value]) => [key, formatSection(key as ResumeKey, value)]),
+);
+const social_networks = parsed.basics?.profiles?.map((profile) => ({
+	network: profile.network as RenderCvNetwork,
+	username: profile.username,
+}));
 
 const rendercvInput = rendercv.parse({
 	cv: {
-		headline: "",
 		custom_connections: [],
+		email: parsed.basics?.email,
+		headline: "",
+		location: parsed.basics?.location?.countryCode || "",
+		name: parsed.basics?.name || "",
+		phone: parsed.basics?.phone,
+		photo: null,
 		sections: sections,
-		website: parsed.basics.url,
-		location: parsed.basics.location.countryCode,
-		photo: undefined,
-		phone: parsed.basics.phone,
-		name: parsed.basics.name,
-		email: parsed.basics.email,
-		social_networks: parsed.basics.profiles.map((profile) => ({
-			username: profile.username,
-			network: profile.network as RenderCvNetwork,
-		})),
+		social_networks: social_networks,
+		website: parsed.basics?.url,
 	},
 } satisfies RenderCV);
 
@@ -66,39 +64,44 @@ function formatSection<Section extends keyof Resume>(
 	value: Resume[Section],
 ): RenderCvSections {
 	switch (key) {
-		case "education":
-			return (value as Resume["education"]).map((e) => ({
-				institution: e.institution,
-				area: e.area,
-				degree: formatStudyType(e.studyType),
-				start_date: e.startDate,
-				end_date: e.endDate,
+		case "education": {
+			return (value as Resume["education"]).map((entry) => ({
+				area: entry.area,
+				degree: formatStudyType(entry.studyType),
+				end_date: entry.endDate,
+				institution: entry.institution,
+				start_date: entry.startDate,
 			}));
-		case "projects":
+		}
+		case "projects": {
 			return (value as Resume["projects"]).map((v) => ({
+				end_date: v.endDate,
+				highlights: v.highlights,
 				name: `[${v.name}](${v.url})`,
 				start_date: v.startDate,
-				end_date: v.endDate,
 				summary: v.description,
-				highlights: v.highlights,
 			}));
-		case "skills":
+		}
+		case "skills": {
 			return (value as Resume["skills"]).map((v) => ({
-				label: v.name,
 				details: v.keywords.join(", "),
+				label: v.name,
 			}));
-		case "work":
+		}
+		case "work": {
 			return (value as Resume["work"]).map((v) => ({
 				company: v.name,
+				end_date: v.endDate,
+				highlights: v.highlights,
 				location: v.location,
 				position: v.position,
 				start_date: v.startDate,
-				end_date: v.endDate,
 				summary: v.summary,
-				highlights: v.highlights,
 			}));
-		default:
+		}
+		default: {
 			throw new Error(`no implementation found for key ${key}`);
+		}
 	}
 }
 

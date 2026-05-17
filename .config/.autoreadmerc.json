@@ -1,0 +1,11 @@
+{
+	"$schema": "../node_modules/@stephansama/auto-readme/dist/schema.json",
+	"usageFile": "./example/index.js",
+	"collapseHeadings": [],
+	"enablePrettier": true,
+	"enableToc": true,
+	"enableUsage": true,
+	"removeScope": "@stephansama/",
+	"affectedRegexes": [".*\\/schema.js$", ".*\\/example/.*$"],
+	"onlyShowPublicPackages": true
+}

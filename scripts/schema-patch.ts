@@ -1,7 +1,7 @@
 #!/usr/bin/env tsx
 
 import * as fsp from "node:fs/promises";
-import * as path from "node:path";
+import path from "node:path";
 import * as url from "node:url";
 
 const cwd = path.dirname(url.fileURLToPath(import.meta.url));
