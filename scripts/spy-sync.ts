@@ -4,7 +4,7 @@ import path from "node:path";
 import * as url from "node:url";
 import * as z from "zod";
 
-import { envConfig as environmentConfig } from "./env";
+import { environmentConfig } from "./environment";
 import * as schema from "./spy-schema";
 
 const environment = await environmentConfig.validate();

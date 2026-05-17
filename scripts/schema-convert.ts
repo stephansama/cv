@@ -63,16 +63,16 @@ function formatSection<Section extends keyof Resume>(
 ): RenderCvSections {
 	switch (key) {
 		case "education": {
-			return value.map((e) => ({
-				area: e.area,
-				degree: formatStudyType(e.studyType),
-				end_date: e.endDate,
-				institution: e.institution,
-				start_date: e.startDate,
+			return (value as Resume["education"]).map((entry) => ({
+				area: entry.area,
+				degree: formatStudyType(entry.studyType),
+				end_date: entry.endDate,
+				institution: entry.institution,
+				start_date: entry.startDate,
 			}));
 		}
 		case "projects": {
-			return value.map((v) => ({
+			return (value as Resume["projects"]).map((v) => ({
 				end_date: v.endDate,
 				highlights: v.highlights,
 				name: `[${v.name}](${v.url})`,
@@ -81,13 +81,13 @@ function formatSection<Section extends keyof Resume>(
 			}));
 		}
 		case "skills": {
-			return value.map((v) => ({
+			return (value as Resume["skills"]).map((v) => ({
 				details: v.keywords.join(", "),
 				label: v.name,
 			}));
 		}
 		case "work": {
-			return value.map((v) => ({
+			return (value as Resume["work"]).map((v) => ({
 				company: v.name,
 				end_date: v.endDate,
 				highlights: v.highlights,

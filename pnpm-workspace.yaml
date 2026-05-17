@@ -6,6 +6,7 @@ catalog:
   "@commitlint/config-conventional": 20.2.0
   "@commitlint/types": 20.2.0
   "@dotenvx/dotenvx": 1.52.0
+  "@eslint/markdown": 8.0.1
   "@stephansama/ai-commit-msg": 1.0.0
   "@stephansama/auto-readme": ^0.4.0
   "@stephansama/eslint-config": 0.2.2
