@@ -3,18 +3,19 @@
 /// <reference types="@stephansama/github-env" />
 
 import * as fsp from "node:fs/promises";
-import * as path from "node:path";
+import path from "node:path";
 import * as url from "node:url";
 import { $ as sh } from "zx";
 
 import pkg from "../package.json";
 
 const CWD = path.dirname(url.fileURLToPath(import.meta.url));
-const SEPARATOR = "<!-- images -->";
+const SEPARATOR = "</div>";
 const REPO = process.env.GITHUB_REPOSITORY || "stephansama/cv";
 const TOKEN = process.env.GITHUB_TOKEN;
 
-const cvImages = (await fsp.readdir(path.join(CWD, "../rendercv_output")))
+const outputs = await fsp.readdir(path.join(CWD, "../rendercv_output"));
+const cvImages = outputs
 	.filter((file) => file.endsWith("png"))
 	.map((file) => path.basename(file));
 
@@ -42,7 +43,8 @@ await fsp.writeFile(readmePath, body);
 if (process.env.CI) await pushCommit();
 
 async function getLatestGitTag() {
-	return (await sh`git describe --tags --abbrev=0`).stdout.trim();
+	const output = await sh`git describe --tags --abbrev=0`;
+	return output.stdout.trim();
 }
 
 async function pushCommit() {

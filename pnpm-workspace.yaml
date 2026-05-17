@@ -1,5 +1,41 @@
-ignoredBuiltDependencies:
-  - core-js
-  - esbuild
-  - highlight.js
-  - puppeteer
+catalog:
+  "@auto-it/conventional-commits": 11.3.6
+  "@auto-it/git-tag": 11.3.6
+  "@auto-it/upload-assets": 11.3.6
+  "@commitlint/cli": 20.2.0
+  "@commitlint/config-conventional": 20.2.0
+  "@commitlint/types": 20.2.0
+  "@dotenvx/dotenvx": 1.52.0
+  "@stephansama/ai-commit-msg": 1.0.0
+  "@stephansama/auto-readme": ^0.4.0
+  "@stephansama/eslint-config": 0.2.2
+  "@stephansama/github-env": 0.1.4
+  "@stephansama/typed-env": 0.0.1
+  "@stephansama/typed-nocodb-api": 0.2.6
+  "@types/node": 25.0.3
+  auto: 11.3.6
+  cheerio: 1.2.0
+  eslint: 10.4.0
+  eslint-plugin-zod: 4.4.0
+  fast-json-patch: ^3.1.1
+  json-refs: 3.0.15
+  json-schema-to-zod: 2.7.0
+  jsonresume-theme-catppuccin: npm:@stephansama/catppuccin-jsonresume-theme@1.0.5
+  ky: ^2.0.2
+  lefthook: 2.1.6
+  nano-staged: 1.0.2
+  prettier-plugin-organize-imports: 4.3.0
+  prettier-plugin-packagejson: 2.5.20
+  resume-cli: 3.1.2
+  tsx: 4.21.0
+  yaml: 2.8.2
+  zod: 4.2.1
+  zx: 8.8.5
+allowBuilds:
+  "@parcel/watcher": false
+  core-js: false
+  esbuild: false
+  highlight.js: false
+  lefthook: true
+  puppeteer: false
+  unrs-resolver: false

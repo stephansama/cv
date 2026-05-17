@@ -1,40 +1,35 @@
+import { createApi } from "@stephansama/typed-nocodb-api";
 import * as fsp from "node:fs/promises";
-import * as path from "node:path";
+import path from "node:path";
 import * as url from "node:url";
 import * as z from "zod";
+
+import { envConfig as environmentConfig } from "./env";
 import * as schema from "./spy-schema";
 
-import { createApi } from "@stephansama/typed-nocodb-api";
-import { envConfig } from "./env";
-
-const env = await envConfig.validate();
+const environment = await environmentConfig.validate();
 
 const companiesApi = createApi({
-	token: env.NOCODB_TOKEN,
-	baseId: env.NOCODB_CAREERS_BASE,
-	origin: env.NOCODB_URL,
-	tableId: env.NOCODB_COMPANY_TABLE,
+	baseId: environment.NOCODB_CAREERS_BASE,
+	origin: environment.NOCODB_URL,
 	schema: z.object({
-		"name": z.string(),
-		"description": z.string(),
-		"url": z.string(),
-		"careers page": z.string().optional().nullable(),
+		"careers page": z.string().trim().optional().nullable(),
+		"description": z.string().trim(),
 		"jobs": z.number().optional().nullable(),
+		"name": z.string().trim(),
+		"url": z.string().trim(),
 	}),
+	tableId: environment.NOCODB_COMPANY_TABLE,
+	token: environment.NOCODB_TOKEN,
 });
 
 const jobApi = createApi({
-	token: env.NOCODB_TOKEN,
-	baseId: env.NOCODB_CAREERS_BASE,
-	origin: env.NOCODB_URL,
-	tableId: env.NOCODB_JOB_TABLE,
+	baseId: environment.NOCODB_CAREERS_BASE,
+	origin: environment.NOCODB_URL,
 	schema: z.object({
-		"position title": z.string(),
-		"url": z.string(),
-		"min salary": z.number(),
+		"follow up": z.string().trim().optional().nullable(),
 		"max salary": z.number(),
-		"follow up": z.string().optional().nullable(),
-		"type": z.enum(["fulltime", "parttime", "internship", "contract"]),
+		"min salary": z.number(),
 		"pay_interval": z.enum([
 			"yearly",
 			"monthly",
@@ -42,12 +37,7 @@ const jobApi = createApi({
 			"daily",
 			"hourly",
 		]),
-		"stage": z.enum([
-			"interested",
-			"applied",
-			"interview",
-			"need to follow up",
-		]),
+		"position title": z.string().trim(),
 		"source": z.enum([
 			"website",
 			"indeed",
@@ -56,7 +46,17 @@ const jobApi = createApi({
 			"google",
 			"glassdoor",
 		]),
+		"stage": z.enum([
+			"interested",
+			"applied",
+			"interview",
+			"need to follow up",
+		]),
+		"type": z.enum(["fulltime", "parttime", "internship", "contract"]),
+		"url": z.string().trim(),
 	}),
+	tableId: environment.NOCODB_JOB_TABLE,
+	token: environment.NOCODB_TOKEN,
 });
 
 const basepath = path.dirname(url.fileURLToPath(import.meta.url));
@@ -67,8 +67,8 @@ const companies = Object.fromEntries(
 	foundPositions.map((position) => [
 		position.company,
 		{
-			url: position.company_url,
 			description: position.company_description,
+			url: position.company_url,
 		},
 	]),
 );
@@ -86,9 +86,9 @@ for (const [missingName, missingValue] of missingCompanies) {
 		action: "CREATE",
 		body: {
 			fields: {
+				description: missingValue.description || "",
 				name: missingName,
 				url: missingValue.url || "",
-				description: missingValue.description || "",
 			},
 		},
 	});
@@ -107,14 +107,14 @@ for (const missingJob of missingJobs) {
 		action: "CREATE",
 		body: {
 			fields: {
-				"stage": "interested",
-				"position title": missingJob.title,
-				"url": missingJob.job_url_direct || missingJob.job_url,
-				"source": missingJob.site,
-				"type": missingJob.job_type || "fulltime",
-				"min salary": missingJob.min_amount || 0,
 				"max salary": missingJob.max_amount || 0,
+				"min salary": missingJob.min_amount || 0,
 				"pay_interval": missingJob.interval || "yearly",
+				"position title": missingJob.title,
+				"source": missingJob.site,
+				"stage": "interested",
+				"type": missingJob.job_type || "fulltime",
+				"url": missingJob.job_url_direct || missingJob.job_url,
 			},
 		},
 	});
