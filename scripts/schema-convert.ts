@@ -9,8 +9,10 @@ import * as z from "zod";
 import pkg from "../package.json";
 
 type RenderCV = z.infer<typeof rendercv>;
-type RenderCvNetwork = RenderCV["cv"]["social_networks"][number]["network"];
-type RenderCvSections = RenderCV["cv"]["sections"][string];
+type RenderCvNetwork = NonNullable<
+	NonNullable<RenderCV["cv"]>["social_networks"]
+>[number]["network"];
+type RenderCvSections = NonNullable<RenderCV["cv"]>["sections"][string];
 type Resume = z.infer<typeof resume>;
 type ResumeKey = keyof Resume;
 
@@ -33,7 +35,7 @@ const sections = Object.fromEntries(
 		.filter(([key]) => allowedKeys.includes(key as ResumeKey))
 		.map(([key, value]) => [key, formatSection(key as ResumeKey, value)]),
 );
-const social_networks = parsed.basics.profiles.map((profile) => ({
+const social_networks = parsed.basics?.profiles?.map((profile) => ({
 	network: profile.network as RenderCvNetwork,
 	username: profile.username,
 }));
@@ -41,15 +43,15 @@ const social_networks = parsed.basics.profiles.map((profile) => ({
 const rendercvInput = rendercv.parse({
 	cv: {
 		custom_connections: [],
-		email: parsed.basics.email,
+		email: parsed.basics?.email,
 		headline: "",
-		location: parsed.basics.location.countryCode,
-		name: parsed.basics.name,
-		phone: parsed.basics.phone,
-		photo: undefined,
+		location: parsed.basics?.location?.countryCode || "",
+		name: parsed.basics?.name || "",
+		phone: parsed.basics?.phone,
+		photo: null,
 		sections: sections,
 		social_networks: social_networks,
-		website: parsed.basics.url,
+		website: parsed.basics?.url,
 	},
 } satisfies RenderCV);
 

@@ -9,7 +9,7 @@ import * as url from "node:url";
 const dirname = path.dirname(url.fileURLToPath(import.meta.url));
 const output = path.join(dirname, "../schema/");
 
-await fs.promises.mkdir(output);
+await fs.promises.mkdir(output, { recursive: true });
 
 const renderCvJsonSchema = await ky
 	.get(
