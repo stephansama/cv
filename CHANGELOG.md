@@ -1,3 +1,23 @@
+# v0.6.0 (Sun May 17 2026)
+
+#### 🚀 Enhancement
+
+- Stephansama/ste 180 create eslint package [#2](https://github.com/stephansama/cv/pull/2) ([@stephansama](https://github.com/stephansama))
+
+#### 🐛 Bug Fix
+
+- chore: update dependencies and versions ([@stephansama](https://github.com/stephansama))
+
+#### ⚠️ Pushed to `main`
+
+- Updated CV Readme ([@stephansama](https://github.com/stephansama))
+
+#### Authors: 1
+
+- Stephan Randle ([@stephansama](https://github.com/stephansama))
+
+---
+
 # v0.5.0 (Sun Mar 01 2026)
 
 #### 🚀 Enhancement
