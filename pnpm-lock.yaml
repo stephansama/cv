@@ -73,8 +73,8 @@ catalogs:
       specifier: 2.7.0
       version: 2.7.0
     jsonresume-theme-catppuccin:
-      specifier: npm:@stephansama/catppuccin-jsonresume-theme@1.0.5
-      version: 1.0.5
+      specifier: npm:@stephansama/catppuccin-jsonresume-theme@2.0.0
+      version: 2.0.0
     ky:
       specifier: ^2.0.2
       version: 2.0.2
@@ -127,7 +127,7 @@ importers:
         version: 1.2.0
       jsonresume-theme-catppuccin:
         specifier: 'catalog:'
-        version: '@stephansama/catppuccin-jsonresume-theme@1.0.5'
+        version: '@stephansama/catppuccin-jsonresume-theme@2.0.0'
       ky:
         specifier: 'catalog:'
         version: 2.0.2
@@ -1237,8 +1237,8 @@ packages:
     engines: {node: '>=24'}
     hasBin: true
 
-  '@stephansama/catppuccin-jsonresume-theme@1.0.5':
-    resolution: {integrity: sha512-MVKbv5YACIunRbA2TtSXQiZXA3e4r24NLWY9fz0KSAHrYJyOehIakBSO6CQzNX9c6Kl3PsTM5lQTAOHIxSOwQQ==}
+  '@stephansama/catppuccin-jsonresume-theme@2.0.0':
+    resolution: {integrity: sha512-RSZ/AeY1q+t0zIG/ozQdm7FNaJTVkyt7mUDet1c405vWtLtAh0D9VEieA5XS9Ftfdo3ZCRtNk9xnzua38Os/Bw==}
     engines: {node: '>=24'}
 
   '@stephansama/eslint-config@0.2.2':
@@ -7840,7 +7840,7 @@ snapshots:
       - supports-color
       - typescript
 
-  '@stephansama/catppuccin-jsonresume-theme@1.0.5':
+  '@stephansama/catppuccin-jsonresume-theme@2.0.0':
     dependencies:
       '@tailwindcss/cli': 4.2.1
       handlebars: 4.7.9

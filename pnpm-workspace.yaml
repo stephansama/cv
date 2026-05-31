@@ -21,7 +21,7 @@ catalog:
   fast-json-patch: ^3.1.1
   json-refs: 3.0.15
   json-schema-to-zod: 2.7.0
-  jsonresume-theme-catppuccin: npm:@stephansama/catppuccin-jsonresume-theme@1.0.5
+  jsonresume-theme-catppuccin: npm:@stephansama/catppuccin-jsonresume-theme@2.0.0
   ky: ^2.0.2
   lefthook: 2.1.6
   nano-staged: 1.0.2
