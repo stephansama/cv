@@ -2,10 +2,10 @@
 	"$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
 	"basics": {
 		"name": "Stephan Randle",
-		"label": "Full-Stack Engineer | TypeScript, Next.js, Systems-Oriented Web Architecture",
+		"label": "Senior Full-Stack Engineer — TypeScript, Next.js, Monorepo Architecture",
 		"image": "https://github.com/stephansama.png",
 		"email": "stephanrandle@hotmail.com",
-		"phone": "+12488257866",
+		"phone": "+1 (248) 825-7866",
 		"url": "https://stephansama.info/",
 		"summary": "Full-Stack Engineer specializing in TypeScript-driven architectures, high-performance frontends, and scalable monorepo systems. Experienced in building production-grade applications with Next.js, Node.js, and modern content platforms. Strong focus on developer experience, automation, testing, and long-term maintainability. Passionate about functional programming patterns, CI/CD optimization, and performance-first web engineering.",
 		"location": {
@@ -66,7 +66,6 @@
 			"position": "Software Engineer",
 			"url": "https://uwm.com/",
 			"startDate": "2022-08-06",
-			"endDate": "2026-06-19",
 			"summary": "UWM is the nation’s largest wholesale mortgage lender, serving independent mortgage brokers across the United States.",
 			"highlights": [
 				"Architected and maintained production-grade Next.js applications serving enterprise-scale users.",
@@ -80,17 +79,15 @@
 		},
 		{
 			"name": "AXYS Global",
-			"location": "Travelling",
-			"description": "Awesome compression company",
+			"location": "Traveling",
+			"description": "Industrial gas compression systems and field services.",
 			"position": "Electrical Engineer",
 			"url": "https://axys.global/",
 			"startDate": "2019-06-01",
 			"endDate": "2022-08-06",
-			"summary": "",
 			"highlights": [
-				"Developed and deployed industrial HMI interfaces using FactoryTalk, improving operator usability and system reliability.",
-				"Performed field troubleshooting and validation of control systems, strengthening cross-disciplinary problem-solving skills.",
-				"Collaborated with mechanical and software teams to ensure safe and reliable system integration in production environments."
+				"Developed PLC control programs and operator-facing HMI interfaces (FactoryTalk) for industrial control systems running in production mining and processing environments.",
+				"Diagnosed and resolved production system failures on-site across remote facilities — sharpened root-cause analysis and debugging across hardware/software boundaries."
 			]
 		}
 	],
@@ -113,11 +110,32 @@
 			"keywords": [
 				"Node.js",
 				"tRPC",
-				"Functional Error Handling",
-				"Monorepos (Turborepo)",
+				"Result/Either types",
+				"Turborepo",
+				"pnpm workspaces",
 				"pnpm",
 				"CI/CD",
 				"GitHub Actions"
+			]
+		},
+		{
+			"name": "Testing & Quality",
+			"keywords": [
+				"Vitest",
+				"React Testing Library",
+				"Storybook",
+				"Lighthouse CI"
+			]
+		},
+		{
+			"name": "CMS & Content Platforms",
+			"keywords": [
+				"Contentstack",
+				"Astro Content Collections",
+				"TinaCMS",
+				"Decap CMS",
+				"Sanity.io",
+				"Contentful"
 			]
 		}
 	],
@@ -187,11 +205,25 @@
 			"url": "https://github.com/stephansama/actions",
 			"roles": ["Maintainer"],
 			"type": "library"
+		},
+		{
+			"name": "JSON Resume CV Pipeline",
+			"description": "Multi-renderer CV system driven by a single canonical resume.json.",
+			"highlights": [
+				"Auto-generated TypeScript + Zod schemas from the upstream JSON Resume v1.0.0 JSON Schema for compile-time and runtime validation.",
+				"Wired one source file into multiple renderers: RenderCV (PDF/Markdown/Typst) and resume-cli (themed HTML).",
+				"Automated publishing with GitHub Actions, including OG image injection and README screenshot updates."
+			],
+			"keywords": ["TypeScript", "Zod", "RenderCV", "JSON Resume", "GitHub Actions"],
+			"startDate": "2024-01-01",
+			"url": "https://github.com/stephansama/monorepo",
+			"roles": ["Architect", "Maintainer"],
+			"type": "library"
 		}
 	],
 	"meta": {
-		"canonical": "https://raw.githubusercontent.com/jsonresume/resume-schema/master/sample.resume.json",
+		"canonical": "https://stephansama.info/resume.json",
 		"version": "v1.0.0",
-		"lastModified": "2017-12-24T15:53:00"
+		"lastModified": "2026-06-07T00:00:00"
 	}
 }
