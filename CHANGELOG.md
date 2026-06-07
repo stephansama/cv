@@ -1,3 +1,19 @@
+# v0.6.2 (Sun Jun 07 2026)
+
+#### 🐛 Bug Fix
+
+- docs(cv): update resume and readme images and labels ([@stephansama](https://github.com/stephansama))
+
+#### ⚠️ Pushed to `main`
+
+- Updated CV Readme ([@stephansama](https://github.com/stephansama))
+
+#### Authors: 1
+
+- Stephan Randle ([@stephansama](https://github.com/stephansama))
+
+---
+
 # v0.6.1 (Sun May 31 2026)
 
 #### 🐛 Bug Fix
