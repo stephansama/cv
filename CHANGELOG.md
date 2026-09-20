@@ -1,3 +1,19 @@
+# v0.6.3 (Sun Sep 20 2026)
+
+#### 🐛 Bug Fix
+
+- Updated CV Readme ([@stephansama](https://github.com/stephansama))
+
+#### ⚠️ Pushed to `main`
+
+- Add `pullfrog.yml` workflow ([@stephansama](https://github.com/stephansama))
+
+#### Authors: 1
+
+- Stephan Randle ([@stephansama](https://github.com/stephansama))
+
+---
+
 # v0.6.2 (Sun Jun 07 2026)
 
 #### 🐛 Bug Fix
