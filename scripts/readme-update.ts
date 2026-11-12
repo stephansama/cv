@@ -49,6 +49,16 @@ async function getLatestGitTag() {
 
 async function pushCommit() {
 	await sh` git add README.md `;
+
+	// `git diff --quiet` exits 0 when nothing is staged. The README only changes
+	// when a new release tag or new CV images exist, so most runs (every pull
+	// request) have nothing to commit.
+	const { exitCode } = await sh` git diff --cached --quiet `.nothrow();
+	if (exitCode === 0) {
+		console.info("README unchanged, nothing to commit");
+		return;
+	}
+
 	await sh` git commit -m "Updated CV Readme" `;
 	await sh` git push `;
 }
