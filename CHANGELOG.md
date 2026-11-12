@@ -1,3 +1,19 @@
+# v0.7.0 (Thu Nov 12 2026)
+
+#### 🚀 Enhancement
+
+- feat(career-ops): add submodule and update dependencies [#3](https://github.com/stephansama/cv/pull/3) ([@stephansama](https://github.com/stephansama))
+
+#### ⚠️ Pushed to `main`
+
+- Updated CV Readme ([@stephansama](https://github.com/stephansama))
+
+#### Authors: 1
+
+- Stephan Randle ([@stephansama](https://github.com/stephansama))
+
+---
+
 # v0.6.3 (Sun Sep 20 2026)
 
 #### 🐛 Bug Fix
