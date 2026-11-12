@@ -1,3 +1,19 @@
+# v0.7.1 (Thu Nov 12 2026)
+
+#### 🐛 Bug Fix
+
+- chore: remove spy job scraper, fix readme ci step [#4](https://github.com/stephansama/cv/pull/4) ([@stephansama](https://github.com/stephansama))
+
+#### ⚠️ Pushed to `main`
+
+- Updated CV Readme ([@stephansama](https://github.com/stephansama))
+
+#### Authors: 1
+
+- Stephan Randle ([@stephansama](https://github.com/stephansama))
+
+---
+
 # v0.7.0 (Thu Nov 12 2026)
 
 #### 🚀 Enhancement
