@@ -8,6 +8,5 @@ dependencies = []
 
 [dependency-groups]
 dev = [
-  "python-jobspy>=1.1.82",
   "rendercv[full]>=2.8",
 ]
